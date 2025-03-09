@@ -1,5 +1,6 @@
 <template>
-  <AppHeader />
+  <Header />
+  <Navbar />
   <NuxtPage />
-  <AppFooter />
+  <Footer />
 </template>
