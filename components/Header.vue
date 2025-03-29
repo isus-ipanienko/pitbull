@@ -1,6 +1,10 @@
 <script setup>
+
 const cartItems = ref(1)
 const wishlistItems = ref(10)
+
+const emits = defineEmits(['toggle-modal'])
+
 </script>
 
 <template>
@@ -27,6 +31,10 @@ const wishlistItems = ref(10)
                 <img src="/assets/svg/shopping-cart.svg">
                 <span>Koszyk ({{cartItems}})</span>
             </a>
+
+            <button class="navbar-item cart-button has-text-white cart-button" @click="emits('toggle-modal')">
+                <span>Modal</span>
+            </button>
         </div>
     </div>
 </nav>
