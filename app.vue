@@ -1,17 +1,21 @@
 <script setup>
 
-const stateModal = ref(false);
+const stateModal = ref(true);
 
-const openModal = () => {
+const startModal = () => {
     stateModal.value = true;
+};
+
+const stopModal = () => {
+    stateModal.value = false;
 };
 
 </script>
 
 <template>
-  <Modal :stateModal="stateModal"/>
-  <Header @toggle-modal="openModal" />
+  <Header @toggle-modal="startModal" />
   <Navbar />
+  <Modal v-if="stateModal" @toggle-modal="stopModal"/>
   <NuxtPage />
   <Footer />
 </template>

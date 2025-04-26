@@ -3,7 +3,7 @@
 const cartItems = ref(1)
 const wishlistItems = ref(10)
 
-const emits = defineEmits(['toggle-modal'])
+const emit = defineEmits(['toggle-modal'])
 
 </script>
 
@@ -32,7 +32,7 @@ const emits = defineEmits(['toggle-modal'])
                 <span>Koszyk ({{cartItems}})</span>
             </a>
 
-            <button class="navbar-item cart-button has-text-white cart-button" @click="emits('toggle-modal')">
+            <button class="navbar-item cart-button has-text-white cart-button" @click="emit('toggle-modal')">
                 <span>Modal</span>
             </button>
         </div>

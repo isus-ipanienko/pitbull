@@ -1,30 +1,21 @@
 <script setup>
+const currentModal = ref(true)
+const emit = defineEmits('toggle-modal')
 
-const props = defineProps({
-    stateModal: {
-        type: Boolean,
-        default: false,
-    }
-});
-
-const currentModal = ref(props.stateModal);
-
-const closeModal = () => {
-    currentModal.value = false;
-};
 
 </script>
-
 <template>
-    <div class="modal" :class="{ 'is-active': currentModal }">
+    <div class="modal is-active">
         <div class="modal-background"></div>
-        <div class="box">
-            <h1 class="title"> modal </h1>
-            <button class="button is-success" @click="closeModal"> X </button>
+        <div class="modal-content">
+            <p>My Modal</p>
         </div>
+        <button class="modal-close is-large" aria-label="close" @click="emit('toggle-modal')"></button>
     </div>
 </template>
-
 <style scoped>
+    .modal-content {
+        padding: 20px;
+        background-color:white;
+    }
 </style>
-
